@@ -1,6 +1,6 @@
 /* Sample MPI Program that computes the sum of a vector.
- * To Compile: mpicc -O -Wall -o psum psum.c 
- * To Run: mpiexec -n 4 ./psum 100000 (on your local system)
+ * To Compile: mpicc -O -Wall -o mpi_vec_sum mpi_vec_sum.c 
+ * To Run: mpiexec -n 4 ./mpi_vec_sum 100000 (on your local system)
  *         To run on DMC cluster follow instructions in README.
  */
 #include <stdlib.h>
