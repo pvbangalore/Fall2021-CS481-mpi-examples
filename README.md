@@ -15,6 +15,8 @@ Here are few important steps that you MUST follow in order to compile and run MP
 #!/bin/bash
 module load openmpi/4.0.5-gnu-pmi2
 srun --mpi=pmi2 ./mat_vec_sum 500000
+srun --mpi=pmi2 ./mat_vec_sum 500000
+srun --mpi=pmi2 ./mat_vec_sum 500000
 ```
 6. The only change you should make in the above file would be to change the name of the executable and other argument you provide to your program. Otherwise, the first two lines should not be changed.
 7. Change the file permissions to have execute permission using the command: 
