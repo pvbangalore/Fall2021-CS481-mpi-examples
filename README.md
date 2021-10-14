@@ -4,7 +4,7 @@ MPI Example Programs
 Here are few important steps that you MUST follow in order to compile and run MPI programs on the DMC Cluster.
 
 1. Make sure to add `module load openmpi/4.0.5-gnu-pmi2` in the file `~/.bashrc.local.dmc` (make sure that this line added at the end of this file)
-2. Remember to logout and login again after adding the line to the `~/.bashrc.local.dmc` file (otherwise, you have to type "module load openmpi/4.0.5-gnu-pmi2" at the command prompt in your shell)
+2. Remember to logout and login again after adding the line to the `~/.bashrc.local.dmc` file (otherwise, you have to type `module load openmpi/4.0.5-gnu-pmi2` at the command prompt in your shell)
 3. If you have completed the above steps and login to the DMC cluster, if you type `which mpicc` you should get the output that looks like this:
 ```
 /mnt/beegfs/apps/dmc/apps/spack_0.15.4/spack/opt/spack/linux-centos7-ivybridge/gcc-9.3.0/openmpi-4.0.5-3xsnyi5ejr5527mpmzwso7kp5lunfbxt/bin/mpicc
