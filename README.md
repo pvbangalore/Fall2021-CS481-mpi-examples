@@ -1,6 +1,10 @@
 # Fall2021-CS481-mpi-examples
 MPI Example Programs
+mpi_vec_sum.c - allocate and initialize vector locally
+mpi_vec_sum2.c - allocate and initialize vector on process with rank 0 and use MPI_Scatter to distribute the vector
+mpi_vec_sum3.c - allocate and initialize vector on process with rank 0 and use MPI_Scatterv to distribute the vector
 
+##Instructions for compiling and running the programs
 Here are few important steps that you MUST follow in order to compile and run MPI programs on the DMC Cluster.
 
 1. Make sure to add `module load openmpi/4.0.5-gnu-pmi2` in the file `~/.bashrc.local.dmc` (make sure that this line added at the end of this file)
