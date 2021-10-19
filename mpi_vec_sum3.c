@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
 	MPI_Comm_rank(MPI_COMM_WORLD, &rank);
 	if (argc != 2) {
 		printf("Usage: %s <N>\n", argv[0]);
-		exit(-1);
+		MPI_Abort(MPI_COMM_WORLD,-1);
 	}
 	N = atoi(argv[1]);
 	myN = N / size;
