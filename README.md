@@ -7,6 +7,10 @@
 
 `mpi_vec_sum3.c` - allocate and initialize vector on process with rank 0 and use MPI_Scatterv to distribute the vector
 
+`blocking.c` - uses blocking send and receive functions to implement a simple broadcast
+
+`nonblocking.c` - uses nonblocking send and receive functions to implement a simple broadcast
+
 
 ## Instructions for compiling and running the programs
 Here are few important steps that you MUST follow in order to compile and run MPI programs on the DMC Cluster.
