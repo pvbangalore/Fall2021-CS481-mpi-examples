@@ -1,4 +1,4 @@
-/* Sample program to illusrate the use of blocking send and recieve calls 
+/* Sample program to illustrate the use of blocking send and recieve calls 
    to implement a simple broadcast */
 #include <stdio.h>
 #include <mpi.h>
