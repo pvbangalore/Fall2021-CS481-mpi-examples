@@ -11,7 +11,7 @@
 
 `nonblocking.c` - uses nonblocking send and receive functions to implement a simple broadcast
 
-`myscatter.c` - uses nonblocking send and receive functions to implement a simple gather operation
+`myscatter.c` - uses nonblocking send and receive functions to implement a simple scatter operation
 
 
 ## Instructions for compiling and running the programs
