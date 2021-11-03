@@ -11,6 +11,8 @@
 
 `nonblocking.c` - uses nonblocking send and receive functions to implement a simple broadcast
 
+`myscatter.c` - uses nonblocking send and receive functions to implement a simple gather operation
+
 
 ## Instructions for compiling and running the programs
 Here are few important steps that you MUST follow in order to compile and run MPI programs on the DMC Cluster.
