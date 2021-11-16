@@ -13,6 +13,7 @@
 
 `myscatter.c` - uses nonblocking send and receive functions to implement a simple scatter operation
 
+`allgather_driver.c` - driver program to test your allgather implementation
 
 ## Instructions for compiling and running the programs
 Here are few important steps that you MUST follow in order to compile and run MPI programs on the DMC Cluster.
