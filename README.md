@@ -38,4 +38,4 @@ srun --mpi=pmi2 ./mat_vec_sum 500000
 ```
 chmod +x myscript.sh
 ```
-9. Use `run_scrip_mpi` to submit the job and make sure to choose the `class` queue and request `number of cores = number of processes.`
+9. Use `run_script_mpi` to submit the job and make sure to choose the `class` queue and request `number of cores = number of processes.`
