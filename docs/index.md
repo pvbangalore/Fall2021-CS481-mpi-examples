@@ -1,37 +1,41 @@
-## Welcome to GitHub Pages
+# Fall2021-CS481-mpi-examples
+## MPI Example Programs
 
-You can use the [editor on GitHub](https://github.com/pvbangalore/Fall2021-CS481-mpi-examples/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+`mpi_vec_sum.c` - allocate and initialize vector locally
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+`mpi_vec_sum2.c` - allocate and initialize vector on process with rank 0 and use MPI_Scatter to distribute the vector
 
-### Markdown
+`mpi_vec_sum3.c` - allocate and initialize vector on process with rank 0 and use MPI_Scatterv to distribute the vector
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+`blocking.c` - uses blocking send and receive functions to implement a simple broadcast
 
-```markdown
-Syntax highlighted code block
+`nonblocking.c` - uses nonblocking send and receive functions to implement a simple broadcast
 
-# Header 1
-## Header 2
-### Header 3
+`myscatter.c` - uses nonblocking send and receive functions to implement a simple scatter operation
 
-- Bulleted
-- List
+`allgather_driver.c` - driver program to test your allgather implementation
 
-1. Numbered
-2. List
+## Instructions for compiling and running the programs
+Here are few important steps that you MUST follow in order to compile and run MPI programs on the DMC Cluster.
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+1. Make sure to add `module load openmpi/4.0.5-gnu-pmi2` in the file `~/.bashrc.local.dmc` (make sure that this line added at the end of this file)
+2. Remember to logout and login again after adding the line to the `~/.bashrc.local.dmc` file (otherwise, you have to type `module load openmpi/4.0.5-gnu-pmi2` at the command prompt in your shell)
+3. If you have completed the above steps and login to the DMC cluster, if you type `which mpicc` you should get the output that looks like this:
 ```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/pvbangalore/Fall2021-CS481-mpi-examples/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+/mnt/beegfs/apps/dmc/apps/spack_0.15.4/spack/opt/spack/linux-centos7-ivybridge/gcc-9.3.0/openmpi-4.0.5-3xsnyi5ejr5527mpmzwso7kp5lunfbxt/bin/mpicc
+```
+4. Compile the MPI programs from the textbook or the sample program I have provided using mpicc
+5. Create a SLURM job submission script, say, `myscript.sh`, and make sure to enter the following:
+```
+#!/bin/bash
+module load openmpi/4.0.5-gnu-pmi2
+srun --mpi=pmi2 ./mat_vec_sum 500000
+srun --mpi=pmi2 ./mat_vec_sum 500000
+srun --mpi=pmi2 ./mat_vec_sum 500000
+```
+6. The only change you should make in the above file would be to change the name of the executable and other argument you provide to your program. Otherwise, the first two lines should not be changed.
+7. Change the file permissions to have execute permission using the command: 
+```
+chmod +x myscript.sh
+```
+9. Use `run_script_mpi` to submit the job and make sure to choose the `class` queue and request `number of cores = number of processes.`
